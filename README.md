@@ -1,5 +1,7 @@
 # binfs
 
+[![Build Status](https://travis-ci.org/go-guoyk/binfs.svg?branch=master)](https://travis-ci.org/go-guoyk/binfs)
+
 embedded filesystem for go binary
 
 ## Usage

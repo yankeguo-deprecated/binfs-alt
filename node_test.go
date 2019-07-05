@@ -1,9 +1,12 @@
-package binfs
+package binfs_test
 
-import "testing"
+import (
+	"go.guoyk.net/binfs"
+	"testing"
+)
 
 func TestNodeBasic(t *testing.T) {
-	n := Node{}
+	n := binfs.Node{}
 	c := n.Child("a")
 	if c == nil {
 		t.Fatal("child not created")

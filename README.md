@@ -22,7 +22,7 @@ PKG=pkgname binfs public view > binfs.gen.go
 
 This command read the content of directory `public` and `view`, output a `binfs.gen.go` file
 
-The environment variable `PKG` is used for package name in `binfs.gen.go` file
+The environment variable `PKG` is used as package name in `binfs.gen.go` file, default is `main`
 
 ## Use File
 

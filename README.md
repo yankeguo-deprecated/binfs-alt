@@ -32,7 +32,7 @@ As long as binfs.gen.go is compiled with your source code, you can extract file 
 binfs.Open("/public/robots.txt")
 ```
 
-You can also use `binfs.FileSystem()` to get a implementation of `http.FileSystem`
+You can also use `binfs.FileSystem()` or `binfs.Find("subdir").FileSystem()` to get a implementation of `http.FileSystem`
 
 ## Credits
 

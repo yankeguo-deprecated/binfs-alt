@@ -42,7 +42,7 @@ You can also use `binfs.FileSystem()` or `binfs.Find("subdir").FileSystem()` to 
 import go.guoyk.net/binfs/binfsecho
 
 e := echo.New()
-e.Use(binfsecho.New("public"))
+e.Use(binfsecho.Static("public"))
 ```
 
 ## Credits

@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-func TestBinfsEcho(t *testing.T) {
+func TestStatic(t *testing.T) {
 	e := echo.New()
 
 	req := httptest.NewRequest(http.MethodGet, "/file1.txt", nil)
@@ -18,7 +18,7 @@ func TestBinfsEcho(t *testing.T) {
 	handler := func(c echo.Context) error {
 		return c.String(http.StatusOK, "test")
 	}
-	m := binfsecho.NewWithConfig(binfsecho.Config{
+	m := binfsecho.StaticWithConfig(binfsecho.StaticConfig{
 		Root:  "testdata",
 		Index: []string{"index.txt"},
 	})
@@ -41,7 +41,7 @@ func TestBinfsEcho(t *testing.T) {
 	handler = func(c echo.Context) error {
 		return c.String(http.StatusOK, "test")
 	}
-	m = binfsecho.NewWithConfig(binfsecho.Config{
+	m = binfsecho.StaticWithConfig(binfsecho.StaticConfig{
 		Root:  "testdata",
 		Index: []string{"index.txt"},
 	})
@@ -64,7 +64,7 @@ func TestBinfsEcho(t *testing.T) {
 	handler = func(c echo.Context) error {
 		return c.String(http.StatusOK, "test")
 	}
-	m = binfsecho.NewWithConfig(binfsecho.Config{
+	m = binfsecho.StaticWithConfig(binfsecho.StaticConfig{
 		Root:  "testdata",
 		Index: []string{"index.txt"},
 	})

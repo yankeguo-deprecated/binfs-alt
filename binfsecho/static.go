@@ -9,33 +9,33 @@ import (
 	"strings"
 )
 
-type Config struct {
+type StaticConfig struct {
 	Skipper middleware.Skipper
 	Root    string
 	Index   []string
 }
 
 var (
-	DefaultConfig = Config{
+	DefaultStaticConfig = StaticConfig{
 		Skipper: middleware.DefaultSkipper,
 		Root:    "public",
 		Index:   []string{"index.html"},
 	}
 )
 
-func New(root string) echo.MiddlewareFunc {
-	return NewWithConfig(Config{Root: root})
+func Static(root string) echo.MiddlewareFunc {
+	return StaticWithConfig(StaticConfig{Root: root})
 }
 
-func NewWithConfig(cfg Config) echo.MiddlewareFunc {
+func StaticWithConfig(cfg StaticConfig) echo.MiddlewareFunc {
 	if cfg.Skipper == nil {
-		cfg.Skipper = DefaultConfig.Skipper
+		cfg.Skipper = DefaultStaticConfig.Skipper
 	}
 	if cfg.Root == "" {
-		cfg.Root = DefaultConfig.Root
+		cfg.Root = DefaultStaticConfig.Root
 	}
 	if cfg.Index == nil {
-		cfg.Index = DefaultConfig.Index
+		cfg.Index = DefaultStaticConfig.Index
 	}
 
 	return func(next echo.HandlerFunc) echo.HandlerFunc {

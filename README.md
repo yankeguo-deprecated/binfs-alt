@@ -14,7 +14,7 @@ go get go.guoyk.net/binfs/cmd/binfs # the cli tool
 go get go.guoyk.net/binfs           # the runtime package
 ```
 
-### Generate File
+### Generate
 
 ```bash
 binfs -pkg binfs_test public view > binfs.gen.go
@@ -26,7 +26,7 @@ This command read the content of directory `public` and `view`, output a `binfs.
 
 The argument `pkg` specifies package name in `binfs.gen.go` file, default is `main`
 
-## Use File
+## Retrive
 
 As long as binfs.gen.go is compiled with your source code, you can extract file with
 
@@ -36,7 +36,7 @@ binfs.Open("/public/robots.txt")
 
 You can also use `binfs.FileSystem()` or `binfs.Find("subdir").FileSystem()` to get a implementation of `http.FileSystem`
 
-## Work with `Echo`
+## Integrate with `Echo`
 
 ```go
 import go.guoyk.net/binfs/binfsecho

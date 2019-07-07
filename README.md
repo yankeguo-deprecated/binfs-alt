@@ -22,6 +22,8 @@ binfs -pkg binfs_test public view > binfs.gen.go
 
 This command read the content of directory `public` and `view`, output a `binfs.gen.go` file
 
+**binfs cli only accept directories**
+
 The argument `pkg` specifies package name in `binfs.gen.go` file, default is `main`
 
 ## Use File

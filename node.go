@@ -171,6 +171,14 @@ func (n *Node) SortedChildren() []*Node {
 	return out
 }
 
+// ModTime get the modtime
+func (n *Node) ModTime() time.Time {
+	if n.Chunk != nil {
+		return n.Chunk.Date
+	}
+	return time.Unix(0, 0)
+}
+
 // FileInfo creates a related os.FileInfo
 func (n *Node) FileInfo() os.FileInfo {
 	info := fileInfo{

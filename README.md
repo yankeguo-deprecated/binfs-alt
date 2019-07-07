@@ -36,6 +36,15 @@ binfs.Open("/public/robots.txt")
 
 You can also use `binfs.FileSystem()` or `binfs.Find("subdir").FileSystem()` to get a implementation of `http.FileSystem`
 
+## Work with `Echo`
+
+```go
+import go.guoyk.net/binfs/binfsecho
+
+e := echo.New()
+e.Use(binfsecho.New("public"))
+```
+
 ## Credits
 
 Guo Y.K., MIT License

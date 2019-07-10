@@ -80,4 +80,28 @@ func TestStatic(t *testing.T) {
 	if !strings.Contains(rec.Header().Get("Content-Type"), "text/plain") {
 		t.Fatal("not text/plain: ", rec.Header().Get("Content-Type"))
 	}
+
+	req = httptest.NewRequest(http.MethodGet, "/static/dir3/", nil)
+	rec = httptest.NewRecorder()
+	c = e.NewContext(req, rec)
+	handler = func(c echo.Context) error {
+		return c.String(http.StatusOK, "test")
+	}
+	m = binfsecho.StaticWithConfig(binfsecho.StaticConfig{
+		Prefix: "/static",
+		Root:   "testdata",
+		Index:  []string{"index.txt"},
+	})
+	h = m(handler)
+	h(c)
+
+	if rec.Code != http.StatusOK {
+		t.Fatal("not 200")
+	}
+	if rec.Body.String() != "hello3\n" {
+		t.Fatal("not hello3")
+	}
+	if !strings.Contains(rec.Header().Get("Content-Type"), "text/plain") {
+		t.Fatal("not text/plain: ", rec.Header().Get("Content-Type"))
+	}
 }

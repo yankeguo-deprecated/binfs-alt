@@ -1,6 +1,7 @@
 # binfs
 
 [![Build Status](https://travis-ci.org/go-guoyk/binfs.svg?branch=master)](https://travis-ci.org/go-guoyk/binfs)
+[![Go Report Card](https://goreportcard.com/badge/go.guoyk.net/binfs)](https://goreportcard.com/report/go.guoyk.net/binfs)
 ![GitHub](https://img.shields.io/github/license/go-guoyk/binfs.svg)
 
 embedded filesystem for go binary
